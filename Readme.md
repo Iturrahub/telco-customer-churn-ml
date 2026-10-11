@@ -2,9 +2,12 @@
 
 ## Caso A: Predicción de abandono de clientes (Telco Customer Churn)
 
-**Asignatura:** MLY1101 — Machine Learning  
+**Asignatura:** MLY1101 — Machine Learning
+
 **Integrantes:** Benjamin Luengo, Eduardo Rodriguez y Diego Iturra
+
 **Docente:** Jazna Meza
+
 **Formato:** Informe técnico en Markdown
 
 ---
