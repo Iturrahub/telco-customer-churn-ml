@@ -56,7 +56,7 @@ El dataset contiene 7.043 clientes:
 - 1.869 abandonaron.
 - La tasa global de abandono es **26,54%**.
 
-Este indicador funciona como línea base del problema.
+Este indicador funciona como referencia inicial del abandono observado en la empresa, mientras que la línea base de Accuracy del problema de clasificación es aproximadamente 73,46%.
 
 ### Recall de la clase positiva
 
@@ -407,8 +407,6 @@ En conjunto, la clasificación permite identificar clientes individuales con se�
 
 ## 17. Matriz de responsabilidades
 
-> **Nota para el equipo:** validar esta distribución antes de entregar y modificarla si no coincide exactamente con el trabajo realizado por cada integrante.
-
 | Integrante | Responsabilidades principales |
 |---|---|
 | **Benjamin Luengo** | Comprensión inicial de los datos, revisión de calidad, apoyo en EDA y organización de gráficos e imágenes del proyecto.|
@@ -437,32 +435,48 @@ Telco_Customer_Churn_Dataset.csv
 Informe_Tecnico_EP2_Telco_Churn.md
 ```
 
-El notebook carga el dataset mediante:
+### Reproducibilidad del proyecto
+
+El notebook se encuentra en la carpeta `notebooks/` y el conjunto de datos en `data/`.
+
+La lectura del dataset se realiza mediante:
 
 ```python
-pd.read_csv("Telco_Customer_Churn_Dataset.csv")
+df = pd.read_csv("../data/Telco_Customer_Churn_Dataset.csv")
 ```
 
-Por lo tanto, el archivo debe conservar exactamente ese nombre o la ruta del notebook debe ajustarse a la estructura final del repositorio.
+Esta ruta permite acceder al archivo CSV ubicado en la carpeta `data/` desde el directorio de ejecución `notebooks/`.
 
-Antes de la entrega final se recomienda ejecutar el notebook completo desde cero para comprobar que todas las celdas se ejecutan correctamente y que no existen dependencias de variables almacenadas previamente en memoria.
+Para reproducir el proyecto, es necesario mantener la estructura de carpetas, instalar las librerías utilizadas y ejecutar todas las celdas del notebook en orden, desde un entorno limpio.
 
 ---
 
-## 19. Organización sugerida del repositorio
+## 19. Organización del repositorio
+
+El proyecto se organiza de la siguiente manera:
 
 ```text
-proyecto-telco-churn/
+telco-customer-churn-ml/
 │
 ├── README.md
+├── .gitignore
+│
 ├── data/
 │   └── Telco_Customer_Churn_Dataset.csv
+│
 ├── notebooks/
 │   └── EV2_machine_learning.ipynb
+│
+├── docs/
+│   └── Informe_Tecnico_EP2_Telco_Churn.md
+│
 ├── images/
 │   └── gráficos utilizados en la presentación
+│
 └── presentation/
-    └── presentación del proyecto
+    └── Presentacion_Telco_Churn_EP2.pptx
 ```
 
-Si se utiliza esta estructura, debe ajustarse la ruta de lectura del dataset en el notebook para mantener la reproducibilidad.
+La estructura mantiene separados los datos, el código, la documentación y los materiales de presentación.
+
+El notebook utiliza la ruta relativa `../data/Telco_Customer_Churn_Dataset.csv`, por lo que debe ejecutarse con `notebooks/` como directorio de trabajo para acceder correctamente al conjunto de datos.
